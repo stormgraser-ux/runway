@@ -147,7 +147,7 @@ const CARDS = {
   double_cash: { name: "Citi Double Cash",   last4: "7915", brand: "mastercard", exp: "12/2028", status: "active", limit: 4300 },
   wf_active:   { name: "WF Active Cash",    last4: "8546", brand: "visa",       exp: "2/2029",  status: "active", limit: 4000 },
   chase:       { name: "Chase Amazon",       last4: "2460", brand: "visa",       exp: "11/2026", status: "idle",   limit: 8500 },
-  bilt:        { name: "BILT Blue",          last4: "TBD",  brand: "mastercard", exp: "TBD",     status: "active" },
+  bilt:        { name: "BILT Blue",          last4: "TBD",  brand: "mastercard", exp: "TBD",     status: "active", limit: 1750 },
   bofa_unl:    { name: "BofA Unlimited",     last4: "8836", brand: "visa",       exp: "6/2031",  status: "idle",   limit: 8000 },
   robinhood:   { name: "Robinhood Gold",     last4: "7880", brand: "visa",       exp: "4/2030",  status: "cancelling", limit: 6000 },
 };
@@ -259,7 +259,7 @@ const ALL_CARDS_INFO = [
   { id: "savor_one", role: "Backup dining/entertainment (3%)", notes: "3% dining, entertainment, streaming, grocery (not Walmart). Backup if Custom Cash or Discover hit caps." },
   { id: "double_cash", role: "Everything else (2%)", notes: "1% on purchase + 1% on payment = 2%. 5% hotels/car via Citi Travel portal. Flat 2%, no caps." },
   { id: "wf_active", role: "Casino washing (2%)", notes: "Unlimited 2%. Dedicated to sweepstakes volume. Don\u2019t mix bills here." },
-  { id: "bilt", role: "Rent (~1%)", notes: "Free card, no annual fee. Only card that earns on rent payments." },
+  { id: "bilt", role: "Rent (~1%)", notes: "Free card, no annual fee. $1,750 limit \u2014 can\u2019t cover full $1,851 rent yet. Split payment or request CLI in 3-6 months." },
   { id: "chase", role: "Amazon 3% (idle)", notes: "3% Amazon/Whole Foods. Redundant with Amex BCE. Keep for credit age. Exp 11/2026." },
   { id: "bofa_unl", role: "Idle (credit age)", notes: "2% until Dec 26, 2026, then 1.5%. Worse than Double Cash long-term." },
   { id: "robinhood", role: "CANCELLING", notes: "Move all recurring charges off, then cancel Gold subscription." },
