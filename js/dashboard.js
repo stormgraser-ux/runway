@@ -16,19 +16,72 @@ const Dashboard = (() => {
     const rewards = DataManager.get('rewards');
     const meta = DataManager.getMeta();
 
-    // Runway hero
+    // Runway hero with SVG gauge ring
     const hero = document.createElement("div");
     hero.className = "dash-hero";
+
+    // Gauge
+    const maxMonths = 36;
+    const pct = Math.min(runway.months / maxMonths, 1);
+    const r = 62, cx = 70, cy = 70;
+    const circ = 2 * Math.PI * r;
+    const offset = circ * (1 - pct);
+
+    let gaugeColor;
+    if (runway.months >= 24) gaugeColor = "#818cf8";
+    else if (runway.months >= 12) gaugeColor = "#34d399";
+    else if (runway.months >= 6) gaugeColor = "#fbbf24";
+    else gaugeColor = "#fb7185";
+
+    const wrap = document.createElement("div");
+    wrap.className = "gauge-wrap";
+
+    const svgNS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(svgNS, "svg");
+    svg.setAttribute("viewBox", "0 0 140 140");
+    svg.setAttribute("class", "gauge-svg");
+
+    const track = document.createElementNS(svgNS, "circle");
+    track.setAttribute("cx", cx); track.setAttribute("cy", cy); track.setAttribute("r", r);
+    track.setAttribute("class", "gauge-track");
+
+    const fill = document.createElementNS(svgNS, "circle");
+    fill.setAttribute("cx", cx); fill.setAttribute("cy", cy); fill.setAttribute("r", r);
+    fill.setAttribute("class", "gauge-fill");
+    fill.setAttribute("stroke", gaugeColor);
+    fill.setAttribute("stroke-dasharray", circ);
+    fill.setAttribute("stroke-dashoffset", circ); // start empty, animate to target
+
+    svg.appendChild(track);
+    svg.appendChild(fill);
+    wrap.appendChild(svg);
+
+    const center = document.createElement("div");
+    center.className = "gauge-center";
     const months = document.createElement("div");
     months.className = "runway-months";
     months.textContent = runway.months;
+    const unit = document.createElement("div");
+    unit.className = "runway-unit";
+    unit.textContent = "months";
+    center.appendChild(months);
+    center.appendChild(unit);
+    wrap.appendChild(center);
+    hero.appendChild(wrap);
+
+    // Animate gauge fill after a frame
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        fill.setAttribute("stroke-dashoffset", offset);
+      });
+    });
+
     const label = document.createElement("div");
     label.className = "runway-label";
-    label.textContent = "months of runway";
+    label.textContent = "of runway";
     const calc = document.createElement("div");
     calc.className = "runway-calc";
-    calc.textContent = fmt(runway.total) + " liquid \u00F7 " + fmt(runway.burn) + "/mo burn";
-    hero.appendChild(months);
+    calc.textContent = fmt(runway.total) + " \u00F7 " + fmt(runway.burn) + "/mo";
     hero.appendChild(label);
     hero.appendChild(calc);
     box.appendChild(hero);
