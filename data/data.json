@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "generated": "2026-04-08T12:00:00-07:00",
+    "digestWeek": "2026-04-01 to 2026-04-07",
+    "version": 1
+  },
+  "balances": {
+    "checking": { "amount": 1472, "asOf": "2026-04-06", "label": "KeyBank Checking" },
+    "savings": { "amount": 5154, "asOf": "2026-04-06", "label": "KeyBank Savings" },
+    "brokerage": { "amount": 15000, "asOf": "2026-04-06", "label": "Tastytrade" },
+    "pending": [{ "label": "Kendall Toyota check", "amount": 11800, "status": "clearing" }]
+  },
+  "cards": {
+    "bofa_cr": { "name": "BofA Cash Rewards", "last4": "NEW", "balance": 0 },
+    "amex_bce": { "name": "Amex BCE", "last4": "1003", "balance": 0 },
+    "discover": { "name": "Discover", "last4": "7545", "balance": 0 },
+    "custom_cash": { "name": "Citi Custom Cash", "last4": "8538", "balance": 0 },
+    "savor_one": { "name": "SavorOne", "last4": "4967", "balance": 0 },
+    "double_cash": { "name": "Citi Double Cash", "last4": "7915", "balance": 0 },
+    "wf_active": { "name": "WF Active Cash", "last4": "8546", "balance": 0 },
+    "chase": { "name": "Chase Amazon", "last4": "2460", "balance": 0 },
+    "bilt": { "name": "BILT Blue", "last4": "TBD", "balance": 0 },
+    "bofa_unl": { "name": "BofA Unlimited", "last4": "8836", "balance": 0 },
+    "robinhood": { "name": "Robinhood Gold", "last4": "7880", "balance": 0 }
+  },
+  "caps": {
+    "bofa_cr_quarterly": { "spent": 790, "limit": 2500, "resetNote": "Resets Jan 1, Apr 1, Jul 1, Oct 1" },
+    "custom_cash_monthly": { "spent": 0, "limit": 500, "resetNote": "Resets each billing cycle" },
+    "discover_quarterly": { "spent": 0, "limit": 1500, "resetNote": "Resets each quarter. ACTIVATE at discover.com!" },
+    "amex_bce_yearly": { "spent": 800, "limit": 6000, "resetNote": "Resets annually" }
+  },
+  "bills": [
+    { "name": "Conservice (Rent + Utils)", "total": 1851, "stormShare": 866, "angelyShare": 986, "dueDay": 1, "paidVia": "BILT", "autopay": true, "category": "housing" },
+    { "name": "EWEB", "total": 138, "stormShare": 69, "angelyShare": 69, "dueDay": 15, "paidVia": "Citi Double Cash", "autopay": false, "category": "utilities" },
+    { "name": "Quantum Fiber", "total": 50, "stormShare": 25, "angelyShare": 25, "dueDay": 20, "paidVia": "KeyBank autopay", "autopay": true, "category": "utilities" },
+    { "name": "Claude.AI", "total": 130, "stormShare": 130, "angelyShare": 0, "dueDay": null, "paidVia": "Amex BCE", "autopay": true, "category": "software" },
+    { "name": "Chewy (Mojo)", "total": 66, "stormShare": 20, "angelyShare": 46, "dueDay": null, "paidVia": "Amex BCE", "autopay": true, "category": "pet" },
+    { "name": "Cloudflare", "total": 1, "stormShare": 1, "angelyShare": 0, "dueDay": null, "paidVia": "Amex BCE", "autopay": true, "category": "software" }
+  ],
+  "monthlyBurn": {
+    "stormTotal": 1442,
+    "breakdown": {
+      "Housing": 866,
+      "Groceries": 300,
+      "Claude.AI": 130,
+      "EWEB": 69,
+      "Internet": 25,
+      "Chewy": 20,
+      "Subscriptions": 20,
+      "Cloudflare": 1
+    }
+  },
+  "gfBoard": {
+    "month": "2026-04",
+    "obligations": [
+      { "item": "Rent (half)", "amount": 838 },
+      { "item": "Garage", "amount": 120 },
+      { "item": "Utilities (half)", "amount": 28 },
+      { "item": "Internet (half)", "amount": 25 },
+      { "item": "EWEB (half)", "amount": 67 },
+      { "item": "Cat food (2wk)", "amount": 30 }
+    ],
+    "totalFixed": 1108
+  },
+  "digest": null,
+  "rewards": {
+    "unredeemed": [
+      { "card": "BofA Unlimited", "amount": 239.10 },
+      { "card": "WF Active Cash", "amount": 63.15 },
+      { "card": "Amex BCE", "amount": 6.83 },
+      { "card": "Chase Amazon", "points": 5242 },
+      { "card": "Citi Custom Cash", "points": 2782 }
+    ]
+  }
+}
